@@ -1,0 +1,73 @@
+baseURL = 'https://pufferfish.cc/'
+title = 'Pufferfish'
+languageCode = 'en-us'
+paginate = '10'
+theme = 'mainroad'
+disqusShortname = ''
+
+[Author]
+    name = "Paul Stevens"
+    bio = "A lead Site Reliability Engineer by day. Photographer and FreeBSD fiddler whenever there is spare time."
+    avatar = ""
+
+[Params]
+    description = "An ode to FreeBSD and running pets"
+    copyright = "Paul Stevens"
+    opengraph = false
+    schema = false
+    twitter_cards = false
+    readmore = false
+    authorbox = true
+    toc = false
+    pager = true
+    post_meta = ["author", "date", "categories"]
+    mainSections = ["posts"]
+    dateformat = "2006-01-02"
+    mathjax = false
+
+[Params.style.vars]
+  highlightColor = "#e22d30" # Override highlight color
+
+  fontFamilyPrimary = "'Open Sans', Helvetica, Arial, sans-serif"
+  fontFamilySecondary = "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+
+[Params.logo]
+  image = ""
+  title = "Pufferfish"
+  subtitle = "An ode to FreeBSD and running pets"
+
+[Params.thumbnail]
+  visibility = ["list", "post"]
+
+[Params.sidebar]
+  home = "right"
+  list = "left"
+  single = false
+  
+  widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 5
+  categories_counter = false
+  tags_counter = false
+
+[Params.widgets.social]
+  # facebook = "username"
+  # twitter = "username"
+  instagram = "nosignalio"
+  linkedin = "paul-stevens-uk"
+  # telegram = "username"
+  github = "ps-token"
+  # gitlab = "username"
+  # bitbucket = "username"
+  # email = "ps@pufferfish.c.c"
+
+# Custom social links
+# [[Params.widgets.social.custom]]
+#   title = "Youtube"
+#   url = "https://youtube.com/user/username"
+#   icon = "youtube.svg" # Optional. Path relative to "layouts/partials"
+
+# [[Params.widgets.social.custom]]
+#   title = "My Home Page"
+#   url = "https://example.com"
