@@ -1,7 +1,7 @@
 ---
 title: "Cloudflare Pages"
 date: 2022-03-16T17:12:57Z
-draft: true
+draft: false
 ---
 
 Configured Cloudflare Pages for the talking face of this service. It's a relatively simple thing to get going.
