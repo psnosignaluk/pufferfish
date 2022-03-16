@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cloudflare Pages - Pufferfish</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Pufferfish" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Pufferfish</div>
+					<div class="logo__tagline">An ode to FreeBSD and running pets</div>
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Cloudflare Pages</h1>
+			<div class="post__meta meta"><div class="meta__item-author meta__item">
+	<svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 12 16"><path d="M6 1c2.2 0 3.5 2 3.5 4.5C9.5 7 8.9 8.2 8 9c2.9.8 4 2.5 4 5v1H0v-1c0-2.5 1.1-4.2 4-5-.9-.8-1.5-2-1.5-3.5C2.5 3 3.8 1 6 1z"/></svg><span class="meta__text">Paul Stevens</span>
+</div>
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2022-03-16T17:12:57Z">2022-03-16</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Configured Cloudflare Pages for the talking face of this service. It&rsquo;s a relatively simple thing to get going.
+In my case, running a Hugo-based SSG, its a case of selecting Hugo from the options menu and setting the <code>Build Command</code>
+and <code>Build Output directory</code>. Note that in my case, I had to change the <code>hugo</code> build directive to <code>hugo -D</code> in order
+to get this to work properly for me. Have a looksee at the configuration I&rsquo;ve used for this:</p>
+<p><img src="/build-screenshot.png" alt="Build Screenshot"></p>
+<p>Once you have this set up, it&rsquo;s a quick matter of running the builder to deploy the code to Cloudflare.</p>
+<pre tabindex="0"><code>10:35:42.910	Initializing build environment. This may take up to a few minutes to complete
+10:35:44.898	Success: Finished initializing build environment
+10:35:44.898	Cloning repository...
+10:35:47.096	Success: Finished cloning repository files
+10:35:47.385	Installing dependencies
+10:35:47.396	Python version set to 2.7
+10:35:51.273	v12.18.0 is already installed.
+10:35:52.666	Now using node v12.18.0 (npm v6.14.4)
+10:35:52.998	Started restoring cached build plugins
+10:35:53.014	Finished restoring cached build plugins
+10:35:53.710	Attempting ruby version 2.7.1, read from environment
+10:35:59.538	Using ruby version 2.7.1
+10:35:59.899	Using PHP version 5.6
+10:36:00.069	5.2 is already installed.
+10:36:00.098	Using Swift version 5.2
+10:36:00.099	Installing Hugo 0.54.0
+10:36:00.765	Hugo Static Site Generator v0.54.0-B1A82C61A/extended linux/amd64 BuildDate: 2019-02-01T10:04:38Z
+10:36:00.770	Started restoring cached go cache
+10:36:00.791	Finished restoring cached go cache
+10:36:00.948	go version go1.14.4 linux/amd64
+10:36:00.968	go version go1.14.4 linux/amd64
+10:36:00.973	Installing missing commands
+10:36:00.973	Verify run directory
+10:36:00.973	Executing user command: hugo -D
+10:36:01.074	Building sites … 
+10:36:01.074	                   | EN  
+10:36:01.075	+------------------+----+
+10:36:01.075	  Pages            | 10  
+10:36:01.075	  Paginator pages  |  0  
+10:36:01.075	  Non-page files   |  0  
+10:36:01.075	  Static files     |  5  
+10:36:01.075	  Processed images |  0  
+10:36:01.075	  Aliases          |  4  
+10:36:01.075	  Sitemaps         |  1  
+10:36:01.075	  Cleaned          |  0  
+10:36:01.075	
+10:36:01.075	Total in 19 ms
+10:36:01.085	Finished
+10:36:01.085	Note: No functions dir at /functions found. Skipping.
+10:36:01.086	Validating asset output directory
+10:36:01.730	Deploying your site to Cloudflare&#39;s global network...
+10:36:04.824	Success: Your site was deployed!
+</code></pre><p>Now this is where stuff gets interesting. For approximately $0 per month, my code
+lives in a server that&rsquo;s close to home for me (London, UK), but also pretty damn close to
+other people across the globe.</p>
+<p>Here&rsquo;s a <code>curl -I https://pufferfish.cc</code> lookup from my machine against the site:</p>
+<pre tabindex="0"><code>curl -I https://pufferfish.cc
+HTTP/2 200
+date: Wed, 16 Mar 2022 16:46:49 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+expect-ct: max-age=604800, report-uri=&#34;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&#34;
+report-to: {&#34;endpoints&#34;:[{&#34;url&#34;:&#34;https:\/\/a.nel.cloudflare.com\/report\/v3?s=cDIpBFyVWaP%2Bz4w%2Fx7hFrh1GSV6082ZUB50YFatLDIxvCfb1qsJUwEK94%2BUaTo6SucyLI7pxNAd2jfdH%2FTo1%2FkYZNRhQIVUWaQQeMSN55uGqoERMORxGThV7kVW%2FLmOq&#34;}],&#34;group&#34;:&#34;cf-nel&#34;,&#34;max_age&#34;:604800}
+nel: {&#34;success_fraction&#34;:0,&#34;report_to&#34;:&#34;cf-nel&#34;,&#34;max_age&#34;:604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+server: cloudflare
+cf-ray: 6ecef796ce8f71d5-LHR
+</code></pre><p>Here&rsquo;s a lookup against using a NordVPN AMS server:</p>
+<pre tabindex="0"><code>curl -I https://pufferfish.cc
+HTTP/2 200
+date: Wed, 16 Mar 2022 18:00:33 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+cache-control: public, max-age=0, must-revalidate
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+expect-ct: max-age=604800, report-uri=&#34;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&#34;
+report-to: {&#34;endpoints&#34;:[{&#34;url&#34;:&#34;https:\/\/a.nel.cloudflare.com\/report\/v3?s=Ppc1Xq%2BLol98w16kPYhlKcSJqfrzvCgIktiFTXygjTjukU2Ten5ZG7kMzNxPq%2B%2FlkyvQo5DQrMdVVHltQcCk5ZoGegMbn1IKNGPwnYaCK651yPmpahhsAgCmqcvTUtqp&#34;}],&#34;group&#34;:&#34;cf-nel&#34;,&#34;max_age&#34;:604800}
+nel: {&#34;success_fraction&#34;:0,&#34;report_to&#34;:&#34;cf-nel&#34;,&#34;max_age&#34;:604800}
+vary: Accept-Encoding
+cf-cache-status: DYNAMIC
+server: cloudflare
+cf-ray: 6ecf639b4e351e6d-AMS
+alt-svc: h3=&#34;:443&#34;; ma=86400, h3-29=&#34;:443&#34;; ma=86400
+</code></pre><p>All of this for free and for nothing. That is awesome.</p>
+
+		</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Paul Stevens</span>
+	</div>
+	<div class="authorbox__description">
+		A lead Site Reliability Engineer by day. Photographer and FreeBSD fiddler whenever there is spare time.
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/posts/the-joy-of-pets/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">The Joy of Pets</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2022 Paul Stevens.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

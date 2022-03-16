@@ -6,7 +6,16 @@
     <description>Recent content on Pufferfish</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Mar 2022 08:44:02 +0000</lastBuildDate><atom:link href="https://pufferfish.cc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Mar 2022 17:12:57 +0000</lastBuildDate><atom:link href="https://pufferfish.cc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudflare Pages</title>
+      <link>https://pufferfish.cc/posts/cloudflare-pages/</link>
+      <pubDate>Wed, 16 Mar 2022 17:12:57 +0000</pubDate>
+      
+      <guid>https://pufferfish.cc/posts/cloudflare-pages/</guid>
+      <description>Configured Cloudflare Pages for the talking face of this service. It&amp;rsquo;s a relatively simple thing to get going. In my case, running a Hugo-based SSG, its a case of selecting Hugo from the options menu and setting the Build Command and Build Output directory. Note that in my case, I had to change the hugo build directive to hugo -D in order to get this to work properly for me. Have a looksee at the configuration I&amp;rsquo;ve used for this:</description>
+    </item>
+    
     <item>
       <title>The Joy of Pets</title>
       <link>https://pufferfish.cc/posts/the-joy-of-pets/</link>
