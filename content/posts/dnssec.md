@@ -67,5 +67,42 @@ There's not a massive amount of troubleshooting that you can do with DNSSEC. It 
 additional records in your domain. You can query these records freely. I think I for one will be back when DNSSEC is enabled on my own domain
 and I can play around with it a little bit more.
 
+### Update 2022-03-19
+
+I have DNSSEC configured now:
+
+```
+$ dig +short DS pufferfish.cc
+2371 13 2 D66096747AC151A5883BDD0A409982E727A38B19AC87029914C98B7D 54CD045D
+```
+
+and
+
+```
+$ dig DNSKEY pufferfish.cc
+; <<>> DiG 9.10.6 <<>> DNSKEY pufferfish.cc
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57921
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;pufferfish.cc.			IN	DNSKEY
+
+;; ANSWER SECTION:
+pufferfish.cc.		3600	IN	DNSKEY	257 3 13 mdsswUyr3DPW132mOi8V9xESWE8jTo0dxCjjnopKl+GqJxpVXckHAeF+ KkxLbxILfDLUT0rAK9iUzy1L53eKGQ==
+pufferfish.cc.		3600	IN	DNSKEY	256 3 13 oJMRESz5E4gYzS/q6XDrvU1qMPYIjCWzJaOau8XNEZeqCYKD5ar0IRd8 KqXXFJkqmVfRvMGPmM1x8fGAa2XhSA==
+
+;; Query time: 25 msec
+;; SERVER: 103.86.96.100#53(103.86.96.100)
+;; WHEN: Sat Mar 19 21:17:56 GMT 2022
+;; MSG SIZE  rcvd: 202
+```
+
+At least at this point, we're doing our little bit to secure DNS servers.
+
+
 [1]: https://developers.cloudflare.com/dns/additional-options/dnssec/
 [2]: https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en
