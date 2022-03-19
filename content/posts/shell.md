@@ -186,8 +186,8 @@ configured with `0400` on your local hard drive is going to be pretty safe. The 
 as they're public. Yubikey and [yubikey-agent][2] exist to allow you the benefit of touch-based authentication as well as well as
 the ability to use the Yubikey to log on between devices.
 
-Next objectives for this little shell server of mine are going to be setting up Docker in a jail and working on some source code to
-implement a couple of API's on that Docker instance. Experimentation should hopefully happen over the weekend.
+Next objectives for this little shell server of mine are going to be setting up a few jails to host some application runtime code,
+such as API servers and such.
 
 
 [1]: https://infosec.mozilla.org/guidelines/openssh
