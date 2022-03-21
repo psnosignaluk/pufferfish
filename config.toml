@@ -7,11 +7,11 @@ disqusShortname = ''
 
 [Author]
     name = "Paul Stevens"
-    bio = "A lead Site Reliability Engineer by day. Photographer and FreeBSD fiddler whenever there is spare time."
+    bio = "A lead Site Reliability Engineer by day. Photographer and tech fiddler whenever there is spare time."
     avatar = ""
 
 [Params]
-    description = "An ode to FreeBSD and running pets"
+    description = "An ode to technology, photography and and running the odd pet."
     copyright = "Paul Stevens"
     opengraph = false
     schema = false
@@ -34,7 +34,7 @@ disqusShortname = ''
 [Params.logo]
   image = ""
   title = "Pufferfish"
-  subtitle = "An ode to FreeBSD and running pets"
+  subtitle = "An ode to technology, photography and and running the odd pet."
 
 [Params.thumbnail]
   visibility = ["list", "post"]
@@ -60,7 +60,7 @@ disqusShortname = ''
   github = "ps-token"
   # gitlab = "username"
   # bitbucket = "username"
-  # email = "ps@pufferfish.c.c"
+  email = "ps@pufferfish.cc"
 
 # Custom social links
 # [[Params.widgets.social.custom]]
