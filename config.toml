@@ -11,7 +11,7 @@ disqusShortname = ''
     avatar = ""
 
 [Params]
-    description = "An ode to technology, photography and and running the odd pet."
+    description = "An ode to technology, photography and running the odd pet."
     copyright = "Paul Stevens"
     opengraph = false
     schema = false
@@ -34,7 +34,7 @@ disqusShortname = ''
 [Params.logo]
   image = ""
   title = "Pufferfish"
-  subtitle = "An ode to technology, photography and and running the odd pet."
+  subtitle = "An ode to technology, photography and running the odd pet."
 
 [Params.thumbnail]
   visibility = ["list", "post"]
