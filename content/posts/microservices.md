@@ -39,7 +39,8 @@ and sample the source code should be first and foremost in your mind. [Kubernete
 is going to give up and ghost you. You're going to need to see traces of applications where they tell you something useful,
 such as why it took over 30 seconds for a database to spit out a result.
 
-Ubnfortunately for all of us, running this on top of [k8s][2] is where we're all currently at.
+Unfortunately for all of us, running this on top of [k8s][2] is where we're all currently at, or is it? Think we're going
+to need a part 2 to take that on.
 
 [1]: https://token.io
 [2]: https://kubernetes.io/
